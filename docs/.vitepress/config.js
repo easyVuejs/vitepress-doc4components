@@ -1,6 +1,6 @@
 module.exports = {
   title: "geely-business-components",
-  base: "/",
+  base: "./",
   themeConfig: {
     nav: [
       { text: "首页", link: "/" },
