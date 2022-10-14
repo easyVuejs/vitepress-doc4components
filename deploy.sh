@@ -4,22 +4,19 @@
 set -e
 
 # 构建
-yarn build
+yarn buildforgithub
 
 # 进入待发布的目录
 cd docs/.vitepress/dist
 
 # 如果是发布到自定义域名
 # echo 'www.example.com' > CNAME
-
+find . -name ".git"
+rm -rf ./.git
 git init
 git add -A
 git commit -m 'deploy'
 
-# 如果部署到 https://<USERNAME>.github.io
-git push -f git@github.com:easyVuejs/vitepress-doc4components.git main:gh-pages
-
-# 如果是部署到 https://<USERNAME>.github.io/<REPO>
-# git push -f git@github.com:<USERNAME>/<REPO>.git master:gh-pages
+git push -f git@github.com:easyVuejs/vitepress-doc4components.git master:gh-pages
 
 cd -
