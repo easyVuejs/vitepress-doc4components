@@ -19,4 +19,7 @@ git commit -m 'deploy'
 
 git push -f git@github.com:easyVuejs/vitepress-doc4components.git master:gh-pages
 
-cd -
+cd ..
+
+find . -name "dist"
+rm -rf ./dist
